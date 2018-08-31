@@ -1,0 +1,261 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html, body{height: 100%;}
+
+body{
+	background: #00246a;
+	color: #fff;
+}
+
+.wrapper{
+	width: 900px;
+	min-height: 100%;
+	margin: auto;
+	/*background: url(bg.jpg);*/
+	background: green;
+  	color: #000;
+}
+
+.header{
+	height: 100px;
+	background: blue;
+    color: yellow;
+    font-weight: bold;
+
+
+}
+
+.left{
+	width: 250px;
+	float: left;
+	color: #000;
+    background: lightgreen;
+    font-weight: bold;
+    border: 5px;
+}
+
+.content{
+	width: 650px;
+	color: #000;
+	float: left;
+	 background: red;
+
+}
+
+.main{
+ 
+ 	width: 900px;
+	/*min-height: 100%;*/
+	margin: auto;
+	/*background: url(bg.jpg);*/
+	background: yellow;
+  	color: #000;
+
+}
+
+
+.footer{
+	height: 40px;
+    background: blue;
+	width: 900px;
+	margin: -40px auto 0;
+	color: #000;
+	font-weight: bold;
+	color: yellow;
+}
+
+.clear{clear: both;}
+.rasporka{height: 40px;}
+
+p{padding: 10px;}
+
+
+/*cart*/
+
+
+
+
+.product_container{
+        width:110px; 
+        height:50px; 
+        /*background:#f1f1f1;*/ 
+        float:left; 
+        margin: 0 15px 15px 0; 
+        text-align:center;
+        padding: 10px;
+        font-weight: bold;
+
+}
+
+.form-container {
+        width:900px; 
+        height:100px; 
+        /*background:#f1f1f1;*/ 
+        float:left; 
+        margin: 0 15px 15px 0; 
+        text-align:center;
+        padding: 10px;
+
+}
+
+.thank4{
+        width:900px; 
+        float:left; 
+        margin: 0 15px 15px 0; 
+        text-align:center;
+        padding: 10px;
+        font-weight: bold;
+        text-align:center; 
+        font-size: 22pt;
+
+
+}
+
+#order-form4{
+        width:900px; 
+        float:left; 
+        margin: 0 15px 15px 0; 
+        text-align:center;
+        padding: 10px;
+        background: yellow;
+  		color: #000;
+  		font-weight: bold;
+
+}
+
+#tab{
+        width:900px; 
+        float:left; 
+        margin: 0 15px 15px 0; 
+        text-align:center;
+        padding: 10px;
+        font-weight: bold;
+        text-align:center; 
+        font-size: 22pt;
+
+
+}
+
+#btn7{
+        
+        font-weight: bold;
+        text-align:center; 
+        font-size: 22pt;
+
+}
+
+#nam1{
+        
+        width:650px; 
+        height: 50px;
+        color: #000000; 
+        font-weight: bold; 
+        text-align:center; 
+        font-size: 32pt;
+
+}
+#tel{
+        
+        width:650px; 
+        height: 50px;
+        color: #000000; 
+        font-weight: bold; 
+        text-align:center; 
+        font-size: 32pt;
+
+}
+
+#dann{
+        
+      
+        color: #000000; 
+        font-weight: bold; 
+        text-align:center; 
+        font-size: 32pt;
+
+}
+
+#title{
+       
+       
+        color: #000000; 
+        font-weight: bold; 
+        text-align:center; 
+        font-size: 22pt;
+
+}
+
+#total11{
+       
+       
+        color: #000000; 
+        font-weight: bold; 
+        text-align:center; 
+        font-size: 32pt;
+
+}
+
+.checkbox{
+       
+        color: #000000; 
+        font-weight: bold; 
+        text-align:center; 
+        font-size: 16pt;
+
+}
+
+
+#public4
+{
+       
+       	margin: 0 auto; 
+        color: #000000; 
+        font-weight: bold; 
+        text-align:center; 
+        font-size: 32pt;
+        width:60px; 
+        height: 60px;
+
+}

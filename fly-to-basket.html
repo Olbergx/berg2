@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Магазин</title>
+<style type="text/css">
+body{
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	background-color:#E2EBED;
+	font-family: Trebuchet MS, Lucida Sans Unicode, Arial, sans-serif;
+	font-size:0.8em;
+}
+
+#zak{
+	display: none;
+}
+
+
+#mainContainer{
+	width:860px;
+	margin:0 auto; 	/* Center alignment */
+	text-align:left;
+	background-color:#FFF;
+}
+#leftColumn{	/* Left column of the page */
+	width:860px;
+	float:left;
+	background-color:#00FFFF;
+	}
+
+#rightColumn{	/* right column, i.e. shopping cart column */
+	width:240px;
+	float:right;
+	height:650px;
+	background-color:#D8D8D8;
+	padding-right:10px;
+}
+#shopping_cart{	/* Shopping cart */
+	margin:3px;
+	padding:3px;
+}
+.clear{	
+	clear:both;
+}
+
+.product_container{	/* Div for each product */
+	width:190px;
+	float:left;
+	font-weight:bold;
+}
+
+.sliding_product img{	/* Float product images */
+	float:left;
+	margin:2px;
+}
+img{	/* No image borders */
+	border:0px;
+}
+
+</style>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script type="text/javascript" src="js/fly-to-basket.js"></script>
+</head>
+<body>
+
+
+
+
+
+<div id="mainContainer">
+
+
+<div id="header" style="width:860px; height:20px;display: inline-block;
+	text-align:left;
+	background-color:#0000FF;">
+    </div>
+
+	<div id="slider" style="width:580px; height:260px;display: inline-block;
+	text-align:left;
+	background-color:#F00;">
+    </div>
+
+
+
+
+	<div id="rightColumn" style="width:260px; height:260px;display: inline-block;">
+		<!-- Shopping cart It's important that the id of this div is "shopping_cart" -->
+		<div id="shopping_cart">
+			<strong style="align: center;">Корзина</strong>	
+			<table id="shopping_cart_items">
+				<tr>
+					<th>Количество</th>
+					<th>Товар</th>
+					<th>Цена</th>
+					<th></th>
+				</tr>
+				<!-- Here, you can output existing basket items from your database 
+				One row for each item. The id of the TR tag should be shopping_cart_items_product + productId,
+				example: shopping_cart_items_product1 for the id 1 -->
+				
+				
+			</table>
+			
+
+
+
+			<div id="shopping_cart_totalprice"></div>
+
+			<!-- <script>
+			parseInt($("#shopping_cart_totalprice").html());
+			</script> -->
+
+<div id="zak">
+	
+		<a  href="#">Заказать</a>
+
+</div>
+
+
+
+		</div>
+		</div>
+
+
+
+
+
+
+	<div id="leftColumn" >
+		<!-- <img src="images/heading3.gif"> -->
+		<br>
+		<br><br>
+
+		<div id="products">
+			<!-- DIV FOR A PRODUCT -->
+			<div class="product_container">
+				<div id="slidingProduct1" class="sliding_product">
+					<img src="images/product.gif">
+					Товар1<br>
+					50.00
+				</div>
+				<a href="#" onclick="addToBasket(1);return false;"><img src="images/basket.gif"></a>
+				<div class="clear"></div>
+			</div>
+			<!-- END DIV FOR A PRODUCT -->
+			<!-- DIV FOR A PRODUCT -->
+			<div class="product_container">
+				<div id="slidingProduct2" class="sliding_product">
+					<img src="images/product.gif">
+					Товар2<br>
+					250.00
+				</div>
+				<a href="#" onclick="addToBasket(2);return false"><img src="images/basket.gif"></a>
+				<div class="clear"></div>
+			</div>
+			<!-- END DIV FOR A PRODUCT -->
+			<!-- DIV FOR A PRODUCT -->
+			<div class="product_container">
+				<div id="slidingProduct3" class="sliding_product">
+					<img src="images/product.gif">
+					Товар34<br>
+					35.00
+				</div>
+				<a href="#" onclick="addToBasket(3);return false"><img src="images/basket.gif"></a>
+				<div class="clear"></div>
+			</div>
+			<!-- END DIV FOR A PRODUCT -->
+			<!-- DIV FOR A PRODUCT -->
+			<div class="product_container">
+				<div id="slidingProduct4" class="sliding_product">
+					<img src="images/product.gif">
+					Товар76<br>
+					50.00
+				</div>
+				<a href="#" onclick="addToBasket(4);return false"><img src="images/basket.gif"></a>
+				<div class="clear"></div>
+			</div>
+			<!-- END DIV FOR A PRODUCT -->
+			
+			<!-- DIV FOR A PRODUCT -->
+			<div class="product_container">
+				<div id="slidingProduct5" class="sliding_product">
+					<img src="images/product.gif">
+					Товар15<br>
+					60.00
+				</div>
+				<a href="#" onclick="addToBasket(5);return false"><img src="images/basket.gif"></a>
+				<div class="clear"></div>
+			</div>
+			<!-- END DIV FOR A PRODUCT -->
+			
+			<!-- DIV FOR A PRODUCT -->
+			<div class="product_container">
+				<div id="slidingProduct6" class="sliding_product">
+					<img src="images/product.gif">
+					Товар268<br>
+					150.00
+				</div>
+				<a href="#" onclick="addToBasket(6);return false"><img src="images/basket.gif"></a>
+				<div class="clear"></div>
+			</div>
+			<!-- END DIV FOR A PRODUCT -->
+			
+			<!-- DIV FOR A PRODUCT -->
+			<div class="product_container">
+				<div id="slidingProduct7" class="sliding_product">
+					<img src="images/product.gif">
+					Товар22<br>
+					150.00
+				</div>
+				<a href="#" onclick="addToBasket(7);return false"><img src="images/basket.gif"></a>
+				<div class="clear"></div>
+			</div>
+			<!-- END DIV FOR A PRODUCT -->
+			
+			<!-- DIV FOR A PRODUCT -->
+			<div class="product_container">
+				<div id="slidingProduct8" class="sliding_product">
+					<img src="images/product.gif">
+					Товар45<br><br>
+					125.00
+					
+				</div>
+				<a href="#" onclick="addToBasket(8);return false"><img src="images/basket.gif"></a>
+				<div class="clear"></div>
+			</div>
+			<!-- END DIV FOR A PRODUCT -->			
+
+
+
+		
+		<div class="clear"></div>
+		
+
+
+
+<div class="product_container">
+			
+	
+	<div class="clear"></div>
+
+
+	
+</div>
+
+<br>
+
+
+<div id="footer" style="width:860px; height:20px;display: inline-block;
+	text-align:left;
+	background-color:#FFFF00;">
+    </div>
+
+    <br>
+
+
+</body>
+</html>
