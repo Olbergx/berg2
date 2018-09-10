@@ -88,13 +88,12 @@ hidenTitle.value = textTitle;
 
             <div id="capa" style="display:none; margin: 0 auto;" class="g-recaptcha" data-sitekey="6LfAs2AUAAAAAHssICeXdYo7B7ktHhnujNHXpaNf"></div><br>
           </div>
-   <!--        </div> -->
-
-
+   
 
 
 <script>
   
+
 
 $("#total11").text($("#shopping_cart_totalprice").html());
 
@@ -110,8 +109,6 @@ var str = "№ Наименование   Сумма " + "\n" + $("#shopping_car
 
 
 
-
-
 </script>
 
       <div id="hide4" style="display:none; color: #FF0000; font-weight: bold; text-align:center; font-size: 12pt;">
@@ -120,7 +117,59 @@ var str = "№ Наименование   Сумма " + "\n" + $("#shopping_car
         <input  id="btn7"  type="submit" 
         class="button-blue" value="СДЕЛАТЬ ЗАКАЗ">
             
-            
+
+            <!-- <?print_r($_POST);?> -->
+
+
+
+<?
+
+function SiteVerify($url)
+{
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_TIMEOUT, 15);
+    curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36");
+    $curlData = curl_exec($curl);
+    curl_close($curl);
+    return $curlData;
+}
+ 
+ 
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+  $recaptcha=$_POST['g-recaptcha-response'];
+    if(!empty($recaptcha))
+    {
+ 
+        $google_url="https://www.google.com/recaptcha/api/siteverify";
+        $secret='Секретный ключ для серверной стороны';
+        $ip=$_SERVER['REMOTE_ADDR'];
+        $url=$google_url."?secret=".$secret."&response=".$recaptcha."&remoteip=".$ip;
+        $res=SiteVerify($url);
+        $res= json_decode($res, true);
+ 
+    //var_dump($res);
+        if($res['success'])
+        {
+            // Проверка каптчи пройдена успешно, продолжаем дальше выполнение проверки формы и т.д.
+        }
+        else
+        {
+          // Проверка не пройдена
+        }
+ 
+    }
+    else
+    {
+          // Проверка не пройдена
+    }
+ 
+}
+?>
+
+
             
             
              <!-- onclick="document.location.href='http://a.tvc.su/index.php'" -->
