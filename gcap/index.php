@@ -37,8 +37,6 @@ if (isset($_POST['g-recaptcha-response'])) {
                       echo "<br />"; 
                       print_r($data);
                       echo "<br />"; 
-                      <br />
-                      
                       echo "Молодец! Авторизация пройдена!!!"; 
 
     } else {
