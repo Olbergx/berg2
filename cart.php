@@ -49,9 +49,6 @@
 
 
 
-
-
-
 <div id="tab"></div>
 
 <div id="total11" name="adminemail1111" value="" ></div> 
@@ -82,9 +79,6 @@ hidenTitle.value = textTitle;
             Выражаю своё согласие на обработку персональных данных! 
               </label>
             
-
-
-
 
             <div id="capa" style="display:none; margin: 0 auto;" class="g-recaptcha" data-sitekey="6LfAs2AUAAAAAHssICeXdYo7B7ktHhnujNHXpaNf"></div><br>
           </div>
@@ -151,9 +145,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $res= json_decode($res, true);
  
     //var_dump($res);
+
         if($res['success'])
         {
             // Проверка каптчи пройдена успешно, продолжаем дальше выполнение проверки формы и т.д.
+
+
+
+          
         }
         else
         {
@@ -169,9 +168,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 }
 ?>
 
-
-            
-            
              <!-- onclick="document.location.href='http://a.tvc.su/index.php'" -->
 
                

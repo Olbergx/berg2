@@ -17,8 +17,6 @@
 
 <div class="wrapper">
  <div class="header">HEADER</div>
-
-  
     
 
 <div class="content">
@@ -94,8 +92,6 @@
 
 <div class="footer">  <p align ="center">ИП Берг О.В. 2018г.</p>	 </div> <!-- footer -->
 
-
-
       
     <script>  
         $(document).ready(function(){  
@@ -159,8 +155,6 @@
               
         });  
     </script>  
-   
-
 
 
 </body>

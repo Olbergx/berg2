@@ -1,0 +1,47 @@
+Установка reCapcha на форму
+Для примера я создал простую форму авторизации. Она будет отправлять данные POST запросом на сервер.
+
+Следующим шагом после создания формы необходимо подключить скрипт капчи в секцию head вашего сайта, а также добавить блок с капчей в то место формы где она вам нужна. Весь необходимый код приведён на странице с ключами и всей дополнительной информацией.
+
+В конечном итоге у вас должна получится следующая структура формы:
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<!--Скрипт располагать в блоке head-->
+<form action="/form.php" method="post">
+    <input type="text" name="login">
+    <input type="password" name="password">
+    <div class="g-recaptcha" data-sitekey="Тут указываете ваш первый ключ"></div>
+    <!--блок кнопки reCapcha-->
+    <button>Отправить</button>
+</form>
+Форма готова. Осталось только вставить свой ключ в атрибут data-sitekey и капча заработает!
+
+Проверка reCapcha на сервере
+Следующим этапом будет написание проверки результата отправки формы на сервере.
+
+Первым делом необходимо проверить были ли вообще переданы в POST массив данные от капчи. Если таких данных не поступало то мы просто пропускаем все проверки и просим пройти валидацию.
+
+<?php
+if (isset($_POST['g-recaptcha-response'])){
+    //проверяем дальше
+}else{
+    exit('Вы не прошли валидацию reCaptcha');
+}
+?>
+Дальше переходим к основной части проверки. Приведу сразу весь код и поясню что за что отвечает.
+
+<?php
+if (isset($_POST['g-recaptcha-response'])) {
+    $url_to_google_api = "https://www.google.com/recaptcha/api/siteverify";
+    $secret_key = '6LcdBBYUAAAAAJcHFDLRWfLYwBNomKtKGjHu21tg';
+    $query = $url_to_google_api . '?secret=' . $secret_key . '&response=' . $_POST['g-recaptcha-response'] . '&remoteip=' . $_SERVER['REMOTE_ADDR'];
+    $data = json_decode(file_get_contents($query));
+    if ($data->success) {
+        // Продолжаем работать с данными для авторизации из POST массива
+    } else {
+        exit('Извините но похоже вы робот \(0_0)/');
+    }
+} else {
+    exit('Вы не прошли валидацию reCaptcha');
+}
+?>
